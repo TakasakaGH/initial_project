@@ -25,7 +25,7 @@ class UpdatePostRequest extends FormRequest
     {
         $rule = [
             'title' => 'required|string|max:50',
-            'body' => 'required|string|max:2000',
+            'body' => 'required|string|max:10000',
         ];
 
         if ($this->file('image')) {

@@ -1,24 +1,55 @@
 <x-app-layout>
-    <div class="container max-w-7xl mx-auto px-4 md:px-12 pb-3 mt-3">
+    <div class="bg-white py-6 sm:py-8 lg:py-12">
+        <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+            <!-- text - start -->
+            <div class="mb-10 md:mb-16">
+                <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">農作物 一覧</h2>
 
-        <x-flash-message :message="session('notice')" />
+                <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
+                    多種多様な農作物を用意しています。育成方法をしっかり学び、おいしい野菜を作ってください。</p>
+            </div>
+            <!-- text - end -->
 
-        <div class="flex flex-wrap -mx-1 lg:-mx-4 mb-4">
-            @foreach ($posts as $post)
-                <article class="w-full px-4 md:w-1/2 text-xl text-gray-800 leading-normal">
-                    <a href="{{ route('posts.show', $post) }}">
-                        <h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-1 text-3xl md:text-4xl break-words">{{ $post->title }}</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 xl:gap-8">
+                <!-- article - start -->
+                @foreach ($posts as $post)
+                    <a href="{{ route('posts.show', $post) }}"
+                        class="group h-48 md:h-64 xl:h-96 flex flex-col bg-gray-100 rounded-lg shadow-lg overflow-hidden relative">
+                        <img src="{{ $post->image_url }}" alt="" loading="lazy"
+                            alt="Photo by Lorenzo Herrera"
+                            class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
+
+                        <div
+                            class="bg-gradient-to-t from-gray-800 md:via-transparent to-transparent absolute inset-0 pointer-events-none">
+                        </div>
+
+                        <div class="relative p-4 mt-auto">
+                            <span class="block text-gray-200 text-sm">April 07, 2021</span>
+                            <h2 class="text-white text-xl font-semibold transition duration-100 mb-2">
+                            {{ $post->title }}</h2>
+
+                            <span class="text-indigo-300 font-semibold">Read more</span>
+                        </div>
+                    </a>
+                @endforeach
+
+{{-- 
+                <h2
+                            class="font-bold font-sans break-normal text-gray-900 pt-6 pb-1 text-3xl md:text-4xl break-words">
                         <h3>{{ $post->user->name }}</h3>
                         <p class="text-sm mb-2 md:text-base font-normal text-gray-600">
-                            <span class="text-red-400 font-bold">{{ date('Y-m-d H:i:s', strtotime('-1 day')) < $post->created_at ? 'NEW' : '' }}</span>
+                            <span
+                                class="text-red-400 font-bold">{{ date('Y-m-d H:i:s', strtotime('-1 day')) < $post->created_at ? 'NEW' : '' }}</span>
                             {{ $post->created_at }}
                         </p>
-                        <img class="w-full mb-2" src="{{ $post->image_url }}" alt="">
                         <p class="text-gray-700 text-base">{{ Str::limit($post->body, 50) }}</p>
                     </a>
-                </article>
-            @endforeach
+                </article> --}}
+                <!-- article - end -->
+            </div>
         </div>
-        {{ $posts->links() }}
+        
+        {{  $posts->links() }}
+        
     </div>
-</x-app-layout> 
+</x-app-layout>
