@@ -713,10 +713,6 @@ select {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.-mx-1 {
-  margin-left: -0.25rem;
-  margin-right: -0.25rem;
-}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -788,6 +784,9 @@ select {
 }
 .inline-flex {
   display: inline-flex;
+}
+.table {
+  display: table;
 }
 .grid {
   display: grid;
@@ -915,9 +914,6 @@ select {
 }
 .flex-col {
   flex-direction: column;
-}
-.flex-wrap {
-  flex-wrap: wrap;
 }
 .items-center {
   align-items: center;
@@ -1255,9 +1251,6 @@ select {
 .leading-7 {
   line-height: 1.75rem;
 }
-.leading-normal {
-  line-height: 1.5;
-}
 .tracking-widest {
   letter-spacing: 0.1em;
 }
@@ -1327,6 +1320,10 @@ select {
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+.text-indigo-500 {
+  --tw-text-opacity: 1;
+  color: rgb(99 102 241 / var(--tw-text-opacity));
 }
 .text-indigo-300 {
   --tw-text-opacity: 1;
@@ -1678,12 +1675,16 @@ select {
 }
 @media (min-width: 768px) {
 
-  .md\:mb-16 {
-    margin-bottom: 4rem;
+  .md\:mb-3 {
+    margin-bottom: 0.75rem;
   }
 
   .md\:mb-6 {
     margin-bottom: 1.5rem;
+  }
+
+  .md\:mb-16 {
+    margin-bottom: 4rem;
   }
 
   .md\:h-64 {
@@ -1696,10 +1697,6 @@ select {
 
   .md\:w-2\/5 {
     width: 40%;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
   }
 
   .md\:grid-cols-2 {
@@ -1723,14 +1720,14 @@ select {
     --tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to);
   }
 
-  .md\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .md\:text-4xl {
@@ -1749,11 +1746,6 @@ select {
   }
 }
 @media (min-width: 1024px) {
-
-  .lg\:-mx-4 {
-    margin-left: -1rem;
-    margin-right: -1rem;
-  }
 
   .lg\:w-1\/2 {
     width: 50%;
@@ -1775,6 +1767,11 @@ select {
   .lg\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .lg\:text-3xl {
